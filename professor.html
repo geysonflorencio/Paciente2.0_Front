@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Configurar Paciente Virtual - Paciente 2.0</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="page-header-hero">
+        <div class="hero-content">
+            <h1><strong>Paciente 2.0</strong></h1>
+            <p class="subtitle">Simulador Avançado de Casos Clínicos</p>
+        </div>
+        <div class="header-overlay"></div>
+    </header>
+
+    <main class="main-content-wrapper">
+        <div class="container">
+            <h2>Configurar <strong>Paciente Virtual</strong> e <strong>Aluno(a)</strong></h2>
+            <form id="form-config-paciente">
+                <fieldset>
+                    <legend>Dados do Paciente</legend>
+                    <label for="nome">Nome do Paciente:</label>
+                    <input type="text" id="nome" name="nome" value="Carlos Daniel" required>
+
+                    <label for="idade">Idade do Paciente:</label>
+                    <input type="number" id="idade" name="idade" value="33" min="0" required>
+
+                    <label for="comorbidades">Comorbidades (separadas por vírgula):</label>
+                    <input type="text" id="comorbidades" name="comorbidades" value="Nenhuma referida">
+
+                    <label for="doencaInput">Doença Principal do Paciente:</label>
+                <input type="text" id="doencaInput" name="doenca" list="lista-doencas" placeholder="Selecione ou digite uma doença" required>
+                <datalist id="lista-doencas">
+                    <option value="Infarto Agudo do Miocárdio"></option>
+                    <option value="Pneumonia Comunitária"></option>
+                    <option value="Crise de Asma"></option>
+                    <option value="Apendicite Aguda"></option>
+                    <option value="Gastroenterite Aguda"></option>
+                    <option value="Enxaqueca com Aura"></option>
+                    <option value="Trombose Venosa Profunda (TVP)"></option>
+                    <option value="COVID-19 (Forma Leve)"></option>
+                    <option value="COVID-19 (Forma Grave)"></option>
+                    <option value="Dengue Clássica"></option>
+                    <option value="Hipertensão Arterial Sistêmica (Crise Hipertensiva)"></option>
+                    <option value="Diabetes Mellitus (Descompensado)"></option>
+                    <option value="Cefaleia Tensional"></option>
+                    <option value="Vertigem Posicional Paroxística Benigna (VPPB)"></option>
+                    <!-- Adicionar mais doenças comuns aqui -->
+                </datalist>
+
+                    <label for="queixaInicial">Queixa Inicial do Paciente (opcional):</label>
+                    <textarea id="queixaInicial" name="queixaInicial" rows="3" placeholder="Ex: Doutor, estou com uma dor terrível no peito."></textarea>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Dados do(a) Aluno(a) para Simulação</legend>
+                    <label for="nomeAluno">Nome do(a) Aluno(a):</label>
+                    <input type="text" id="nomeAluno" name="nomeAluno" value="Ana Paula" placeholder="Nome do(a) estudante" required>
+
+                    <label for="tratamentoAluno">Tratamento para o(a) Aluno(a):</label>
+                    <select id="tratamentoAluno" name="tratamentoAluno" required>
+                        <option value="Dr." selected>Dr. (Masculino)</option>
+                        <option value="Dra.">Dra. (Feminino)</option>
+                    </select>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Resultados de <strong>Exames</strong></legend>
+                    <div id="lista-exames-config">
+                        <!-- Exames são adicionados aqui pelo script_professor.js -->
+                    </div>
+                    <div class="fieldset-actions">
+                        <button type="button" id="btn-adicionar-exame" class="btn btn-secondary">Adicionar Exame</button>
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Critérios de <strong>Avaliação</strong></legend>
+                    <p class="fieldset-description">Adicione os pontos chave que o aluno deve abordar.</p>
+                    <div id="lista-criterios-avaliacao">
+                        <!-- Critérios são adicionados aqui pelo script_professor.js -->
+                    </div>
+                    <div class="fieldset-actions">
+                        <button type="button" id="btn-adicionar-criterio" class="btn btn-secondary">Adicionar Critério</button>
+                    </div>
+                </fieldset>
+
+                <div class="form-actions">
+                    <button type="submit" class="btn btn-primary">Configurar Simulação</button>
+                </div>
+            </form>
+            <div id="status"></div>
+
+            <p class="config-page-link">
+                <a href="index.html" target="_blank" class="btn btn-info">
+                    Abrir Simulação do Aluno
+                </a>
+                <p style="font-size: var(--font-size-sm); color: var(--text-muted); margin-top: var(--spacing-unit);">
+                    (após configurar)
+                </p>
+            </p>
+        </div>
+    </main>
+
+    <footer class="page-footer">
+        <p><strong>Sinapse HealthTech</strong> - Desenvolvido por Geyson S. Florêncio</p>
+    </footer>
+
+    <script src="script_professor.js"></script>
+</body>
+</html>

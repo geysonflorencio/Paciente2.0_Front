@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paciente 2.0 - Simulador Aluno</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="page-header-hero">
+        <div class="hero-content">
+            <h1><strong>Paciente 2.0</strong></h1>
+            <p class="subtitle">Simulador Avançado de Casos Clínicos</p>
+        </div>
+        <div class="header-overlay"></div>
+    </header>
+
+    <main class="main-content-wrapper">
+        <div class="main-layout"> 
+            <div class="column-card chat-container">
+                <h2>Chat com <strong><span id="display-nome-paciente">Paciente</span></strong></h2>
+                <div class="info-paciente">
+                    <p><strong>Paciente:</strong> <span id="nome-paciente">Carregando...</span></p>
+                    <p><strong>Idade:</strong> <span id="idade-paciente">...</span></p>
+                    <p id="paragrafo-queixa-inicial" style="display: none;"><strong>Queixa Inicial:</strong> <span id="queixa-inicial-paciente"></span></p>
+                </div>
+                <div class="chat-area">
+                    <div id="conversa" class="conversa-historico">
+                        <!-- Mensagens aqui -->
+                    </div>
+                </div>
+                <div class="controles">
+                    <button id="btn-falar" class="btn btn-success">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path><path d="M19 10v2a7 7 0 0 1-14 0v-2"></path><line x1="12" y1="19" x2="12" y2="22"></line></svg>
+                        Falar
+                    </button>
+                    <button id="btn-recomecar" class="btn btn-warning">Recomeçar</button>
+                    <button id="btn-avaliar" class="btn btn-info">Avaliação</button>
+                </div>
+                <p id="status-microfone">Toque para falar</p>
+            </div>
+
+            <div class="column-card resultados-exames-container">
+                <h2>Resultados de <strong>Exames</strong></h2>
+                <div id="lista-resultados-exames">
+                    <p class="placeholder-exames">Nenhum exame solicitado ainda.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="page-footer">
+        <p><strong>Sinapse HealthTech</strong> - Desenvolvido por Geyson S. Florêncio</p>
+    </footer>
+
+    <!-- Elemento de áudio para tocar a fala da OpenAI -->
+    <audio id="audio-player-paciente" style="display: none;"></audio>
+
+    <!-- MODAIS (COMO ANTES) -->
+    <div id="modal-imagem-exame" class="modal-overlay">
+        <div class="modal-content-viewer image-modal">
+            <div class="modal-header">
+                <h3 id="titulo-modal-imagem-exame">Visualização do <strong>Exame</strong></h3>
+                <button class="modal-close-btn" id="fechar-modal-imagem" title="Fechar" aria-label="Fechar">×</button>
+            </div>
+            <div class="modal-body">
+                <div class="image-container-modal">
+                    <img id="imagem-exame-modal-grande" src="" alt="Imagem do Exame Ampliada">
+                </div>
+                <p id="descricao-imagem-modal-grande"></p>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-avaliacao" class="modal-overlay">
+        <div class="modal-content-viewer">
+             <div class="modal-header">
+                <h2 id="titulo-modal-avaliacao">Feedback da <strong>Simulação</strong></h2>
+                <button class="modal-close-btn" id="fechar-modal-avaliacao" title="Fechar" aria-label="Fechar">×</button>
+            </div>
+            <div class="modal-body">
+                <div id="conteudo-avaliacao">
+                    <!-- Feedback será inserido aqui -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script_aluno.js"></script>
+</body>
+</html>

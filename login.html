@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Paciente 2.0</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Poppins:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body class="login-page-body"> <!-- Aplicaremos o fundo aqui -->
+
+    <div class="login-container">
+        <header class="login-header">
+            <h1>PACIENTE <strong>2.0</strong></h1>
+        </header>
+
+        <main class="login-main">
+            <h2>Acessar Simulação</h2> 
+            <form id="form-login" class="login-form">
+                <div class="form-group">
+                    <label for="email">Email ou Usuário:</label>
+                    <input type="text" id="email" name="email" placeholder="Digite seu email ou usuário" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="senha">Senha:</label>
+                    <input type="password" id="senha" name="senha" placeholder="Digite sua senha" required>
+                </div>
+                
+                <button type="submit" class="btn btn-login">Entrar</button>
+                
+                <div class="login-options">
+                    <a href="#" class="forgot-password">Esqueceu a senha?</a>
+                </div>
+            </form>
+        </main>
+    </div>
+
+    <footer class="page-footer login-footer">
+        <p><strong>Sinapse HealthTech</strong> - Reservado Todos os Direitos</p>
+    </footer>
+
+    <script src="script_login.js"></script>
+</body>
+</html>
